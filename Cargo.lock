@@ -3014,7 +3014,7 @@ dependencies = [
 
 [[package]]
 name = "sqlite-git"
-version = "0.0.1-alpha.0"
+version = "0.0.1-alpha.2"
 dependencies = [
  "anyhow",
  "gitoxide",
