@@ -8,4 +8,5 @@ authors = ["Alex Garcia"]
 git_tag_format = "v$VERSION"
 
 [targets]
+github_releases = {}
 pip = {}
