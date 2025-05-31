@@ -51,8 +51,6 @@ jobs:
       - run: |
           gh release upload ${{ github.ref_name }} \
             distx/github_releases/* \
-            distx/spm/* \
-            distx/sqlpkg/* \
             distx/checksums.txt \
             distx/sqlite-dist-manifest.json \
             distx/install.sh
