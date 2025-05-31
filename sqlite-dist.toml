@@ -2,7 +2,7 @@
 name = "sqlite-gitoxide"
 license = "MIT OR Apache"
 homepage = "https://alexgarcia.xyz/sqlite-gitoxide"
-repo = "https://github.com/asg017/sqlite-jiff"
+repo = "https://github.com/asg017/sqlite-gitoxide"
 description = "A SQLite extension for querying git repositories."
 authors = ["Alex Garcia"]
 git_tag_format = "v$VERSION"
