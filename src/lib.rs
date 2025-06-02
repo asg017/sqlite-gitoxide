@@ -39,7 +39,12 @@ fn git_at(context: *mut sqlite3_context, values: &[*mut sqlite3_value]) -> Resul
         .map_err(|e| Error::new_message(format!("Failed to find commit: {}", e)))?;
     let tree = commit.tree()
         .map_err(|e| Error::new_message(format!("Failed to get tree from commit: {}", e)))?;
-    let entry = tree.find_entry(api::value_text(&values[2])?).ok_or_else(|| Error::new_message("Failed to find entry in tree:"))?;
+    let entry  = match tree.lookup_entry_by_path(api::value_text(&values[2])?) {
+        Ok(Some(entry)) => entry,
+        _ => {
+          return Ok(());
+        }
+    };
     let data = &entry.object().map_err(|e| Error::new_message(format!("entry is not an object: {e}")))?.data;
     match std::str::from_utf8(data) {
         Ok(s) => api::result_text(context, s)?,
